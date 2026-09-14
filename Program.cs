@@ -1,4 +1,5 @@
 using demo_hc16_marten9;
+using demo_hc16_marten9.Marten;
 using JasperFx;
 using Marten;
 
@@ -14,7 +15,7 @@ builder.Services.AddGraphQLServer()
     .AddQueryType()
     .Adddemo_hc16_marten9Types()
     .AddFiltering()
-    .AddMartenFiltering()
+    .ConfigureSchema(sb => sb.TryAddTypeInterceptor<MartenExecutableTypeInterceptor>())
     .AddSorting()
     .AddMartenSorting()
     .AddPagingArguments();

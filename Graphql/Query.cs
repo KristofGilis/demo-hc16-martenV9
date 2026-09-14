@@ -15,16 +15,4 @@ public static partial class Query
     {
         return session.Query<Foo>();
     }
-    
-    // [UseConnection]
-    // [UseFiltering]
-    // [UseSorting]
-    // public static Task<PageConnection<Foo>> GetFoosNew(
-    //     IQuerySession session, 
-    //     PagingArguments pagingArguments, 
-    //     QueryContext<Foo> queryContext, 
-    //     CancellationToken cancellationToken)
-    // {
-    //     return session.Query<Foo>().With(queryContext).ToPageAsync(pagingArguments, cancellationToken);
-    // }
 }
